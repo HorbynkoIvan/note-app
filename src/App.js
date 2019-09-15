@@ -3,16 +3,18 @@ import {BrowserRouter, Route, Switch} from "react-router-dom";
 import { Container} from 'react-bootstrap';
 import {Home} from "./pages/Home";
 import {About} from "./pages/About";
+import {NavBar} from "./components/NavBar";
 
 function App() {
   return (
       <BrowserRouter>
-        <Container>
+          <NavBar/>
+        <div className="container pt-4">
           <Switch>
             <Route path={'/'} exact component={Home}/>
             <Route path={'/about'} exact component={About}/>
           </Switch>
-        </Container>
+        </div>
 
       </BrowserRouter>
   );
