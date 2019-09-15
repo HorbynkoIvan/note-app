@@ -6,7 +6,7 @@ import {About} from "./pages/About";
 import {NavBar} from "./components/NavBar";
 import {AlertComponent} from "./components/Alert";
 
-function App() {
+function App({...props}) {
   return (
       <BrowserRouter>
           <NavBar/>
