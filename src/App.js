@@ -10,16 +10,15 @@ function App({...props}) {
     return (
         <AlertState>
             <BrowserRouter>
-            <NavBar/>
-            <div className="container pt-4">
-                <AlertComponent alert="Attention!!!"/>
-                <Switch>
-                    <Route path={'/'} exact component={Home}/>
-                    <Route path={'/about'} exact component={About}/>
-                </Switch>
-            </div>
-
-        </BrowserRouter>
+                <NavBar/>
+                <div className="container pt-4">
+                    <AlertComponent alert="Attention!!!"/>
+                    <Switch>
+                        <Route path={'/'} exact component={Home}/>
+                        <Route path={'/about'} exact component={About}/>
+                    </Switch>
+                </div>
+            </BrowserRouter>
         </AlertState>
     );
 }
