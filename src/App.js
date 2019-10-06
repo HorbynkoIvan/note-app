@@ -12,7 +12,7 @@ function App({...props}) {
             <BrowserRouter>
                 <NavBar/>
                 <div className="container pt-4">
-                    <AlertComponent alert="Attention!!!"/>
+                    <AlertComponent/>
                     <Switch>
                         <Route path={'/'} exact component={Home}/>
                         <Route path={'/about'} exact component={About}/>

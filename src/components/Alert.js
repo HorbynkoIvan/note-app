@@ -1,7 +1,9 @@
-import React, {useState} from "react"
+import React, {useState, useContext} from "react"
 import {Alert, Button} from "react-bootstrap";
+import {AlertContext} from '../context/alert/alertContext'
 
-export const AlertComponent = ({alert}) => {
+export const AlertComponent = () => {
+    const {alert, hide}=useContext(AlertContext);
     const [show, setShow] = useState(true);
     if (!alert) return null;
     if (show) {
