@@ -1,7 +1,7 @@
 import React, {useState, useContext} from "react"
 import {Form} from "react-bootstrap";
 
-export const FormComponent = () => {
+export const FormInputComponent = () => {
     const [value, setValue] = useState();
     const handleSubmit = (e) => {
         e.preventDefault();

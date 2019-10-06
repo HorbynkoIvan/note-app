@@ -5,7 +5,11 @@ export const Notes = ({notes}) => {
     return (
         <ListGroup>
             {notes.map((note)=>(
-                <ListGroup.Item key={note.id}>{note.title} <CloseButton/></ListGroup.Item>
+                <ListGroup.Item key={note.id}>
+                    {note.title}
+                    <strong className='ml-2'>{new Date().toLocaleDateString()}</strong>
+                    <CloseButton/>
+                </ListGroup.Item>
             ))}
         </ListGroup>
     )

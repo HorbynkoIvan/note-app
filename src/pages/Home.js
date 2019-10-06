@@ -1,5 +1,5 @@
 import React from "react"
-import {FormComponent} from "../components/Form";
+import {FormInputComponent} from "../components/Form";
 import {Notes} from "../components/Notes";
 
 export const Home = () => {
@@ -8,7 +8,7 @@ export const Home = () => {
     })
     return (
         <>
-            <FormComponent/>
+            <FormInputComponent/>
             <Notes notes={notes}/>
         </>
     )
