@@ -7,7 +7,12 @@ export const FormInputComponent = () => {
   const alert = useContext(AlertContext);
   const handleSubmit = e => {
     e.preventDefault();
-    alert.show(value);
+    if (value.trim()) {
+      alert.show('Note created!', 'success');
+      setValue('');
+    } else {
+      alert.show('Please enter text!', 'danger');
+    }
   };
   return (
     <Form onSubmit={handleSubmit}>

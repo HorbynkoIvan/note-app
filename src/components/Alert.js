@@ -1,14 +1,29 @@
-import React, { useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import { Alert, Button } from 'react-bootstrap';
 import { AlertContext } from '../context/alert/alertContext';
 
 export const AlertComponent = () => {
-  const { alert, hide } = useContext(AlertContext);
-  if (!alert.visible) return null;
-  return (
-    <Alert variant="danger" onClose={hide} dismissible>
-      <Alert.Heading>Oh snap! You got an error!</Alert.Heading>
-      <p>{alert.text}</p>
-    </Alert>
-  );
+  const { alertState, hide } = useContext(AlertContext);
+  if (!alertState.visible) return null;
+  const showAlert = () =>
+    [
+      'primary',
+      'secondary',
+      'success',
+      'danger',
+      'warning',
+      'info',
+      'light',
+      'dark',
+    ].map((variant, idx) => {
+      if (variant === alertState.alertType) {
+        return (
+          <Alert key={idx} variant={variant} onClose={hide} dismissible>
+            <Alert.Heading>Attention!</Alert.Heading>
+            <p>{alertState.text}</p>
+          </Alert>
+        );
+      }
+    });
+  return showAlert();
 };
